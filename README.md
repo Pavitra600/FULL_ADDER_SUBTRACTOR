@@ -37,49 +37,50 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
-![image](https://github.com/user-attachments/assets/cea8dc7e-e90f-4645-8c5b-6d1bcf77acb7)
-![image](https://github.com/user-attachments/assets/c8a1a6fb-d1f6-459c-814c-4ffeafe1308d)
-**Procedure**
-1.Open the Quartus II
-2.create a new project
-3.start coding
-4.run it then RTL realization will be shown
-5.next get the output waveform 
-6.get the output and write a result
+    ![image](https://github.com/user-attachments/assets/cea8dc7e-e90f-4645-8c5b-6d1bcf77acb7)
+    ![image](https://github.com/user-attachments/assets/c8a1a6fb-d1f6-459c-814c-4ffeafe1308d)
+    **Procedure**
+    1.Open the Quartus II
+    2.create a new project
+    3.start coding
+    4.run it then RTL realization will be shown
+    5.next get the output waveform 
+    6.get the output and write a result
 
 **Program:**
-//full adder
-module Exp4_1(sum, cout, a, b, cin);
-output sum;
-output cout;
-input a;
-input b;
-input cin;
-//internal nets wire sl,cl,c2;
-//Instantiate logic gate primitives
-xor (sl,a,b);
-and(cl,a,b);
-xor(sum, sl, cin);
-and (c2, sl,cin);
-or (cout, c2,cl);
-endmodule
-
-module Exp4_2 (df, bo, a, b, bin);
-output df;
-output bo;
-input a;
-input b;
-input bin;
-wire w1,w2,w3;
-assign w1=a^b;
-assign w2=(~a&b);
-assign w3=(~w1&bin);
-assign df=w1^bin;
-assign bo=w2|w3;
-endmodule
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:24900612
-J.PAVITRA
-*/
+                                                /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+                                          
+                                  module Exp4_1(sum, cout, a, b, cin);
+                                  output sum;
+                                  output cout;
+                                  input a;
+                                  input b;
+                                  input cin;
+                                  //internal nets wire sl,cl,c2;
+                                  //Instantiate logic gate primitives
+                                  xor (sl,a,b);
+                                  and(cl,a,b);
+                                  xor(sum, sl, cin);
+                                  and (c2, sl,cin);
+                                  or (cout, c2,cl);
+                                  endmodule
+                  
+                  module Exp4_2 (df, bo, a, b, bin);
+                  output df;
+                  output bo;
+                  input a;
+                  input b;
+                  input bin;
+                  wire w1,w2,w3;
+                  assign w1=a^b;
+                  assign w2=(~a&b);
+                  assign w3=(~w1&bin);
+                  assign df=w1^bin;
+                  assign bo=w2|w3;
+                  endmodule
+                  Developed by: RegisterNumber:24900612
+                  J.PAVITRA
+                  */
 
 **RTL Schematic**
 ![Exp4_1](https://github.com/user-attachments/assets/36fbd518-151d-47a9-a059-87774e0a9f21)
